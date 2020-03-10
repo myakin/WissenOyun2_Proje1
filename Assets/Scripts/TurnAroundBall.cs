@@ -9,25 +9,24 @@ public class TurnAroundBall : MonoBehaviour
     
     
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            rotationAmount -= rotationSpeed;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
+    void Update() {
+        if (Input.GetKey(KeyCode.A)) {
             rotationAmount += rotationSpeed;
+
+        } else if (Input.GetKey(KeyCode.D)) {
+            rotationAmount -= rotationSpeed;
+        
         }
 
-        transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, rotationAmount);
-        
+        //transform.rotation = Quaternion.Euler(transform.eulerAngles.x, rotationAmount, transform.eulerAngles.z);
+
+        transform.rotation *= Quaternion.Euler(0,rotationAmount,0);
+        rotationAmount=0;
         
     }
 }
