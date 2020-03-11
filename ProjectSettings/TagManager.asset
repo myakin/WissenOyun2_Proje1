@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UIManager
+  - SaveLoadManager
+  - SceneLoader
   layers:
   - Default
   - TransparentFX
